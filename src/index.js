@@ -12,6 +12,9 @@ app.get('/', (req, res) => {
 
 app.get('/sha1', (req, res) => {
     const s = req.query.s
+    if (s == null) {
+        res.send('<html>error</html>')
+    }
     const shasum = crypto.createHash('sha1')
     shasum.update(s)
     const hashedValue = shasum.digest('hex') // => "0beec7b5ea3f0fdbc95d0dd47f3c5bc275da8a33"
