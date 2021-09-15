@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 app.get('/sha1', (req, res) => {
     const s = req.query.s
     if ((s == null) || (s.length == 0)) {
-        res.status(500).send({message: "An error occurs: null or empty string"})
+        res.status(400).send({message: "An error occurs: null or empty string"})
     }
     const shasum = crypto.createHash('sha1')
     shasum.update(s)
