@@ -4,6 +4,7 @@
   "description": "Projet CY LW2022",
   "main": "src/index.js",
   "scripts": {
+    "serve": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
