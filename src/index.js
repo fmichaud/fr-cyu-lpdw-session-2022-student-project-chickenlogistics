@@ -10,7 +10,11 @@ db.authenticate()
   .catch(err => console.log('Error: ' +err)) // @NicoLaDta: utilise le niveau de log "error" (car c 1 erreur) ! => console.error()
 
 const { City, Truck, Temperature } = require('./models')
+
 const City = require('./models/City')
+const { City } = require('./models/index')
+const { City } = require('./models')
+
 db.sync() // Synchronize database
 
 const app = express()
