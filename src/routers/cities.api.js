@@ -11,6 +11,6 @@ router.get('/', (req, res, next) => {
       res.sendStatus(200);
     })
     .catch(err => console.log(err))
-
 })
 
+module.exports = router
