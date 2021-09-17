@@ -12,8 +12,19 @@ db.authenticate()
 const { City, Truck, Temperature } = require('./models')
 
 const City = require('./models/City')
-const { City } = require('./models/index')
-const { City } = require('./models')
+/**
+ou au choix:
+
+ ``̀`javascript
+ const { City } = require('./models/index')
+ const { City } = require('./models') // le module `index.js` est chargé par défaut dans le répertoire modèle
+ ``̀`
+
+ Cette méthode permet d'importer plus d'un seul module en une seule ligne :
+ ``̀`javascript
+ const { City, Temperature } = require('./models')
+ ```
+ */
 
 db.sync() // Synchronize database
 
