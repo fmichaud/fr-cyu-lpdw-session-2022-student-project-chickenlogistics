@@ -1,12 +1,17 @@
 const express = require('express')
 const crypto = require('crypto')
 const db = require('../config/databases')
+
+
+
 // Authenticate.
 db.authenticate()
   .then(() => console.log('Database connected...'))
   .catch(err => console.log('Error: ' +err)) // @NicoLaDta: utilise le niveau de log "error" (car c 1 erreur) ! => console.error()
-db.sync() // Synchronize database
+
 const { City, Truck, Temperature } = require('./models')
+const City = require('./models/City')
+db.sync() // Synchronize database
 
 const app = express()
 const port = 3000
